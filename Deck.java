@@ -1,14 +1,17 @@
+import java.util.ArrayList;
+
 public class Deck{
-private ArrayList<Cards> cards;
+private ArrayList<Card> cards;
 
-public Deck(Arraylist<HashMap<card>> cards);
-  this.cards = cards
-
-public Arraylist<HashMap<card>> generateDeck(){
-  suitsArray = new 
-  for 
+public Deck(ArrayList<Card> cards){
+  this.cards = cards;
 }
 
+// public Arraylist<Card> generateDeck(){
+//   // String suitsArray = new String[4];
 
-
+//   // suitsArray = ["Hearts", "Diamonds", "Clubs", "Spades"]
+//   // for (String suit:suitsArray){
+//   //   for(
+//   }
 }
