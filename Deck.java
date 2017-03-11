@@ -17,6 +17,17 @@ public class Deck{
     return cards.get(position);
   }
 
+  public Deck generate(){
+    Suit[] suits = {Suit.DIAMONDS, Suit.HEARTS, Suit.CLUBS, Suit.SPADES};
+    for (int i = 0; i < suits.length; i++){
+      for (int j = 2; j < 15; j++){
+        card = new Card(j, suits[i]);
+        this.addCard(card);
+      }
+    }
+  return this;
+  }
+
   // public Arraylist<Card> generateDeck(){
   //   // String suitsArray = new String[4];
 

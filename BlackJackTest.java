@@ -10,6 +10,7 @@ public class BlackJackTest{
   Card firstCard;
   Card lastCard;
   Deck deck;
+  Deck newDeck;
   ArrayList<Card> cards;
 
   @Before
@@ -17,9 +18,6 @@ public class BlackJackTest{
     card = new Card(11, Suit.HEARTS);
     card2 = new Card(5, Suit.DIAMONDS);
     card3 = new Card(14, Suit.CLUBS);
-    // for testing the ordered generation of a deck the first card in generated will be 2 of diamonds and the last will be the Ace of spades.
-    firstCard = new Card(2, Suit.DIAMONDS);
-    lastCard = new Card(14, Suit.SPADES);
     cards = new ArrayList<Card>();
     deck = new Deck(cards);
   }
@@ -45,8 +43,17 @@ public class BlackJackTest{
   @Test
   public void testCanGenerateOrderedDeck(){
     deck.generate();
-    assertEquals(deck.showCard(0), firstCard);
-    assertEquals(deck.showCard(0), lastCard);
+    // first card: for loop should create 2 of diamonds first. 
+    int cardValueFirst = deck.showCard(0).value;
+    assertEquals(cardValueFirst, 2);
+    Suit cardSuitFirst = deck.showCard(0).suit;
+    assertEquals(cardSuitFirst, Suit.DIAMONDS);
+    // last card: for loop should create ace of spades last.
+    int cardValueLast = deck.showCard(51).value;
+    assertEquals(cardValueLast, 14);
+    Suit cardSuitLast = deck.showCard(51).suit;
+    assertEquals(cardSuitLast, Suit.SPADES);
+    
   }
 
 }
