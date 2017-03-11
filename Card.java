@@ -1,16 +1,16 @@
 public class Card{
   public Integer value;
-  public String suit;
+  public Suit suit;
 
 
-  public Card(Integer value, String suit){
+  public Card(Integer value, Suit suit){
     this.value = value;
     this.suit = suit;
   }
 
 public String getFaceValue(){
-  Integer cardNumber = value; 
-  switch(cardNumber){
+
+  switch(value){
     case 11:
     return "Jack";    
 
