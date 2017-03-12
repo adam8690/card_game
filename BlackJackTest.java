@@ -10,7 +10,9 @@ public class BlackJackTest{
   Deck deck;
   Deck newDeck;
   ArrayList<Card> cards;
-  Player player;
+  Player player1;
+  Player player2;
+  HighCard highCardGame;
 
   @Before
   public void before(){
@@ -19,7 +21,9 @@ public class BlackJackTest{
     card3 = new Card(14, Suit.CLUBS);
     cards = new ArrayList<Card>();
     deck = new Deck(cards);
-    player = new Player();
+    player1 = new Player();
+    player2 = new Player();
+    highCardGame = new HighCard();
   }
 
   @Test
@@ -72,11 +76,18 @@ public class BlackJackTest{
 
   @Test
   public void playerCanTakeCard(){
-    assertEquals(player.cards.size(), 0);
+    assertEquals(player1.cards.size(), 0);
     deck.generate();
     card = deck.takeRandomCard();
-    player.addCard(card);
-    assertEquals(player.cards.size(), 1);
+    player1.addCard(card);
+    assertEquals(player1.cards.size(), 1);
+  }
+
+  @Test
+  public void testHighestCardSelected(){
+    player1.addCard(card);
+    player2.addCard(card2);
+    assertEquals(highCardGame.highestCard(player1, player2), player2);
   }
 
 }
