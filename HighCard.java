@@ -2,12 +2,12 @@ import java.util.ArrayList;
 
 public class HighCard implements Game{
 
-  public String play(){
+  public String play(Player player1, Player player2){
     // run game methods here
     ArrayList<Card> cards = new ArrayList<Card>();
     Deck deck = new Deck(cards);
-    Player player1 = new Player();
-    Player player2 = new Player();
+    // Player player1 = new Player();
+    // Player player2 = new Player();
     HighCard highCardGame = new HighCard();
 
     deck.generate();
@@ -21,6 +21,7 @@ public class HighCard implements Game{
     player2.addCard(card2);
     Player winner = this.highestCard(player1, player2);
 
+    System.out.println("Winner is: " + winner.name);
 
     return "The game played!";
   }  

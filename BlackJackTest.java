@@ -21,8 +21,8 @@ public class BlackJackTest{
     card3 = new Card(14, Suit.CLUBS);
     cards = new ArrayList<Card>();
     deck = new Deck(cards);
-    player1 = new Player();
-    player2 = new Player();
+    player1 = new Player("Adam");
+    player2 = new Player("House");
     highCardGame = new HighCard();
   }
 
@@ -94,7 +94,7 @@ public class BlackJackTest{
 
   @Test
   public void testGamePlayed(){
-    assertEquals(highCardGame.play(), "The game played!");
+    assertEquals(highCardGame.play(player1, player2), "The game played!");
     // if the game is a draw, null will be returned, also not testing if the correct winner is returned.
   }
 
