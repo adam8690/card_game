@@ -61,17 +61,18 @@ public class BlackJackTest{
     deck.generate();
     card = deck.takeRandomCard();
     card2 = deck.takeRandomCard();
-    System.out.println(card.value);
-    System.out.println(card.suit);
+    // System.out.println(card.value);
+    // System.out.println(card.suit);
 
-    System.out.println(card2.value);
-    System.out.println(card2.suit);
+    // System.out.println(card2.value);
+    // System.out.println(card2.suit);
     
     assertEquals(deck.cards.size(), 50);
   }
 
   @Test
   public void playerCanTakeCard(){
+    assertEquals(player.cards.size(), 0);
     deck.generate();
     card = deck.takeRandomCard();
     player.addCard(card);

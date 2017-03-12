@@ -5,9 +5,12 @@ public class Player{
   ArrayList<Card> cards;
 
   public Player(){
-  this.cards = cards;
+  this.cards = new ArrayList<Card>();
+
   }
 
-  
+  public void addCard(Card card){
+    this.cards.add(card);
+  }  
 
 }
