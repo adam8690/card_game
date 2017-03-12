@@ -85,9 +85,17 @@ public class BlackJackTest{
 
   @Test
   public void testHighestCardSelected(){
+    // card1 - Jack of hearts
     player1.addCard(card);
+    // card2 - 5 of Diamonds
     player2.addCard(card2);
     assertEquals(highCardGame.highestCard(player1, player2), player1);
+  }
+
+  @Test
+  public void testGamePlayed(){
+    assertEquals(highCardGame.play(), "The game played!");
+    // if the game is a draw, null will be returned, also not testing if the correct winner is returned.
   }
 
 }
