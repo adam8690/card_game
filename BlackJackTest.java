@@ -87,7 +87,7 @@ public class BlackJackTest{
   public void testHighestCardSelected(){
     player1.addCard(card);
     player2.addCard(card2);
-    assertEquals(highCardGame.highestCard(player1, player2), player2);
+    assertEquals(highCardGame.highestCard(player1, player2), player1);
   }
 
 }
