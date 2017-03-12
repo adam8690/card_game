@@ -18,11 +18,14 @@ public class BlackJack implements Game{
     player2.addcard(card2);
     player2.addcard(card4);
 
-    
+
 
 
     return "BlackJack complete";
 }  
 
+  public Player highestPair(){
+    
+  }
 
 }

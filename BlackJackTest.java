@@ -101,6 +101,20 @@ public class BlackJackTest{
   }
 
   @Test
+  public void testHighestPairSelected(){
+    // card - 11 (Jack) Hearts, card2 - 5 of diamonds (total 16)
+    player1.addCard(card);
+    player1.addCard(card2);
+    // card 3 - 14 (Ace) clubs total (19)
+    player2.addCard(card2);
+    player2.addCard(card3);
+
+    assertEquals(blackJackGame.highestPair(player1, player2), player2);
+
+  }
+
+
+  @Test
   public void testBlackJackPlayed(){
     assertEquals(blackJackGame.play(player1, player2), "BlackJack complete");
   }
