@@ -17,7 +17,7 @@ public class HighCard implements Game{
     player2.addCard(card2);
     Player winner = this.highestCard(player1, player2);
 
-    System.out.println("Winner is: " + winner.name);
+    System.out.println("Winner of High Card is: " + winner.name);
 
     return "The game played!";
   }  
