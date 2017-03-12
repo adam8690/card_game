@@ -7,11 +7,10 @@ public class BlackJackTest{
   Card card;
   Card card2;
   Card card3;
-  Card firstCard;
-  Card lastCard;
   Deck deck;
   Deck newDeck;
   ArrayList<Card> cards;
+  Player player;
 
   @Before
   public void before(){
@@ -20,6 +19,7 @@ public class BlackJackTest{
     card3 = new Card(14, Suit.CLUBS);
     cards = new ArrayList<Card>();
     deck = new Deck(cards);
+    player = new Player();
   }
 
   @Test
@@ -54,6 +54,28 @@ public class BlackJackTest{
     Suit cardSuitLast = deck.showCard(51).suit;
     assertEquals(cardSuitLast, Suit.SPADES);
     
+  }
+
+  @Test 
+  public void canTakeCard(){
+    deck.generate();
+    card = deck.takeRandomCard();
+    card2 = deck.takeRandomCard();
+    System.out.println(card.value);
+    System.out.println(card.suit);
+
+    System.out.println(card2.value);
+    System.out.println(card2.suit);
+    
+    assertEquals(deck.cards.size(), 50);
+  }
+
+  @Test
+  public void playerCanTakeCard(){
+    deck.generate();
+    card = deck.takeRandomCard();
+    player.addCard(card);
+    assertEquals(player.cards.size(), 1);
   }
 
 }
