@@ -3,20 +3,16 @@ import java.util.ArrayList;
 public class HighCard implements Game{
 
   public String play(Player player1, Player player2){
-    // run game methods here
+    // set up game with new deck.
     ArrayList<Card> cards = new ArrayList<Card>();
     Deck deck = new Deck(cards);
-    // Player player1 = new Player();
-    // Player player2 = new Player();
     HighCard highCardGame = new HighCard();
-
     deck.generate();
+    // play the game
     Card card1 = deck.takeRandomCard();
-    System.out.println(card1.value);
-    System.out.println(card1.suit);
+    System.out.println(card1.getFaceValue() + " " + card1.suit);
     Card card2 = deck.takeRandomCard();
-    System.out.println(card2.value);
-    System.out.println(card2.suit);
+    System.out.println(card2.getFaceValue() + " " + card1.suit);
     player1.addCard(card1);
     player2.addCard(card2);
     Player winner = this.highestCard(player1, player2);

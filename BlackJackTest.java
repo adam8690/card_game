@@ -13,6 +13,7 @@ public class BlackJackTest{
   Player player1;
   Player player2;
   HighCard highCardGame;
+  BlackJack blackJackGame;
 
   @Before
   public void before(){
@@ -24,6 +25,7 @@ public class BlackJackTest{
     player1 = new Player("Adam");
     player2 = new Player("House");
     highCardGame = new HighCard();
+    blackJackGame = new BlackJack();
   }
 
   @Test
@@ -96,6 +98,11 @@ public class BlackJackTest{
   public void testGamePlayed(){
     assertEquals(highCardGame.play(player1, player2), "The game played!");
     // if the game is a draw, null will be returned, also not testing if the correct winner is returned.
+  }
+
+  @Test
+  public void testBlackJackPlayed(){
+    assertEquals(blackJackGame.play(player1, player2), "BlackJack complete");
   }
 
 }
